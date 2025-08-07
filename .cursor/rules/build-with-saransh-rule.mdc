@@ -1,0 +1,135 @@
+name: BuildWithSaransh Portfolio
+description: >
+  A modern, animated developer + designer portfolio built with a Django backend
+  and a React/Next.js frontend, inspired by premium Framer templates.
+  Focus is on animation, design elegance, case study storytelling, and dynamic content management
+  via Django Admin.
+
+rules:
+
+  - 🏠 HOMEPAGE STRUCTURE:
+      - Hero section:
+          - Use large, elegant headline ("Hi, I’m Saransh.")
+          - Subtext: Describe role (e.g., "Flutter & Swift Developer, UI Designer.")
+          - Location + availability (e.g., “Based in India. Available for freelance.”)
+          - CTA button (e.g., “Let’s Work Together”)
+          - Animate with Framer Motion (fade in + upward motion)
+          - Reference UI: [WebStacked Framer](https://webstacked.framer.website/)
+
+      - Services / What I Do section:
+          - 3–4 service cards (e.g., Mobile Apps, UI Design, Product Strategy)
+          - Each card = icon, title, short sentence
+          - Hover effect = lift + soft shadow
+          - Reference UI: [Praxis Framer](https://praxis.framer.website/)
+
+      - Work / Projects:
+          - Use Django model: `Project` (title, slug, short_description, hero_image, created_at)
+          - Display dynamically as horizontal scroll or grid cards with:
+              - Thumbnail image
+              - Title
+              - Tag or feature
+          - On click, route to `/projects/[slug]`
+          - Reference UI: WebStacked → Work Preview Cards
+
+      - Toolkit / Skills:
+          - Display skills as icon grid or progress bars
+          - Optional: categorize into Dev / Design / Tools
+          - Include hover tooltips
+          - Add subtle float-in animation on scroll
+          - Use Tailwind grid layout for responsiveness
+
+      - Career Journey:
+          - Vertical timeline layout (year → role → company)
+          - Animate appearance on scroll
+          - Reference UI: Praxis → Experience Timeline
+
+      - Blog Preview ("Journal"):
+          - Dynamically load latest 3–4 blogs from Django `BlogPost` model
+          - Each blog preview = title, subtitle/excerpt, created date
+          - Clicking opens `/blogs/[slug]`
+          - Design like Medium (clean serif text, whitespace, hover underline)
+          - Reference UI: Medium.com
+
+      - FAQ Section:
+          - Accordion-style layout
+          - Use reusable component with open/close logic
+          - Animated icons for expansion
+
+      - Footer:
+          - Contact CTA: email, phone, LinkedIn
+          - Reassuring line like: "Let’s Build Something Great Together."
+          - Copyright
+          - Simple horizontal layout with subtle fade-in
+
+  - 📄 PROJECT DETAILS PAGE (`/projects/[slug]`)
+      - Route dynamically based on slug
+      - Fetch project details from Django backend
+      - Layout:
+          - Hero Image Banner
+          - Project Title
+          - Full description (can expand in future)
+          - Image gallery or video (optional)
+          - Tools used (icons)
+          - Learnings or challenges
+      - Animate content on scroll
+      - Add "Back to Work" button
+
+  - 📝 BLOG SYSTEM
+      - Blog posts created via Django Admin
+      - Model: `BlogPost` with title, slug, excerpt, content (RichText), created_at
+      - Use `django-ckeditor` for content formatting
+      - Blog listing page = `/blogs`
+      - Blog detail page = `/blogs/[slug]`
+      - Include tags, estimated read time, sharing icons
+
+  - 💬 CONTACT SECTION
+      - Shown at the bottom of the homepage
+      - Simple form: name, email, message
+      - On submit: call Django API endpoint to save `Inquiry` model
+      - Show toast on success/failure
+      - Add alt contact methods (email, phone)
+      - Optionally integrate with EmailJS or SMTP
+
+  - 🔗 ROUTING
+      - Use Next.js file-based routing or React Router
+      - Support:
+          - `/projects/[slug]`
+          - `/blogs/[slug]`
+          - `/blogs`
+          - `/contact` (if needed)
+
+  - 🧑‍💻 BACKEND (DJANGO ADMIN)
+      - Models:
+          - Project (title, slug, description, image, date)
+          - BlogPost (title, slug, excerpt, content, image, created_at)
+          - Inquiry (name, email, message, created_at)
+      - Allow uploads for hero images and blog cover photos
+      - Use Django Rest Framework for APIs
+      - Enable CORS for localhost:3000
+
+  - 🧠 DESIGN SYSTEM
+      - Fonts: `Lato`, `Inter`, or similar sans-serif
+      - Color scheme: white, grey, black, accent (optional)
+      - Effects: glassmorphism (backdrop blur), soft inner shadows, large border-radius
+      - Animations: Framer Motion for every section load / hover state
+      - Mobile-first layout
+      - TailwindCSS or Framer’s layout guide
+
+  - 💡 UI INSPIRATION SOURCES:
+      - [WebStacked](https://webstacked.framer.website/)
+      - [Praxis](https://praxis.framer.website/)
+      - [Apple](https://www.apple.com)
+      - [Medium](https://medium.com)
+      - [Framer Templates](https://www.framer.com/templates/)
+
+  - 📦 TECH STACK TAGS:
+      - portfolio
+      - framer-style
+      - django-admin
+      - rich blog
+      - animated-ui
+      - tailwind
+      - contact-form
+      - glassmorphism
+      - responsive
+      - cursor-ai
